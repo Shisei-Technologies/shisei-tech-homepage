@@ -31,26 +31,63 @@ a{
 	text-decoration-line:none;
 	font-weight: bold;
 	color:#fff;
+	margin-left: 10px; /* 左のマージンを追加 */
+    margin-right: 10px; /* 右のマージンを追加 */
 }
 .linkbutton:hover{
 	background: #fff;
 	color:#187fc4;
 }
 /* header */
-.header{
-	height:100px;
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000; /* 他の要素より前面に表示 */
+	background-color: #fff; /* 背景色を設定して、コンテンツがスクロールしたときに見やすくする */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* オプション: ヘッダーに影をつけて浮き上がらせる */
+	transition: height 0.3s ease; /* スムーズな高さの変化を追加 */
 }
+
+.collapse {
+    transition: height 0.3s ease; /* スムーズな高さの変化を追加 */
+}
+
+.navbar {
+    align-items: center;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-collapse {
+    max-height: none; /* 高さの制限を解除 */
+}
+
 .header-content{
 	background:#fff;
 }
 .header_h1_img{
 	height:68px;
 }
-.navbar-expand-lg .navbar-nav .header_nav_nav-link{
-	display:inline-block;
-	margin: 0 1rem;
-	padding: .5rem 1rem;
-	border-bottom:solid 2px #FFFFFF;
+.navbar-expand-lg .navbar-nav .header_nav_nav-item{
+	display: flex;
+    align-items: center; /* 垂直方向に中央揃え */
+    height: 100%; /* 親要素の高さに合わせる */
+    display: flex;
+    align-items: center; /* 垂直方向に中央揃え */
+	margin-left: 10px; /* 左のマージンを追加 */
+    margin-right: 10px; /* 右のマージンを追加 */
+}
+
+.navbar-expand-lg .navbar-nav .header_nav_nav-link {
+    display: flex;
+    align-items: center;
+    height: auto; /* 高さを親要素に依存させない */
+    line-height: normal; /* Bootstrapデフォルトを継承 */
 	color: #040000;
 }
 .navbar-expand-lg .navbar-nav .header_nav_nav-link:hover{
@@ -78,32 +115,43 @@ a{
 }
 
 /* index_top */
-.index_top{
-	position:relative;
-	width:100vw;
-	height:100vh;
-	background-image: url(../img/index_top-bg.png);
-	background-size: cover;
-	background-repeat: repeat;
+.index_top {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* クリップされた部分のはみ出しを防ぐ */
+    color: #fff;
+    margin-top: 90px; /* ヘッダーの高さ分のマージンを追加 */
 }
-.index_top:after{
-	content:"";
-	display:block;
-	position:absolute;
-	top:0;
-	right:0;
-	width:30%;
-	height:100%;
-	background:#fff;
-	
+
+.index_top_left {
+    flex: 2;
+    height: 100%;
+    background-image: url(../img/index_top-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 右側を円弧でカット */
+    clip-path: ellipse(100% 125% at left center);
 }
-.index_top_content_title-h2{
-	color:#fff;
+
+.index_top_right {
+    flex: 1;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-/* index_business-content */
-.index_business-content_list_li_img{
-	height: 384px;
+
+.index_top_logo {
+	height: 33vh; /* index_topの高さの30% */
 }
+
 /* index_company */
 .index_company{
 	position:relative;
