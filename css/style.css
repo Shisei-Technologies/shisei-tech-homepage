@@ -116,40 +116,47 @@ a{
 
 /* index_top */
 .index_top {
+    position: relative;
     display: flex;
-    width: 100vw;
+	width: 100vw;
     height: 100vh;
-    overflow: hidden; /* クリップされた部分のはみ出しを防ぐ */
+	overflow: hidden; /* クリップされた部分のはみ出しを防ぐ */
     color: #fff;
     margin-top: 90px; /* ヘッダーの高さ分のマージンを追加 */
-}
-
-.index_top_left {
-    flex: 2;
-    height: 100%;
     background-image: url(../img/index_top-bg.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    /* 右側を円弧でカット */
-    clip-path: ellipse(100% 125% at left center);
 }
 
-.index_top_right {
-    flex: 1;
-    height: 100%;
-    background-color: #fff;
+/* 左側 */
+.index_top_left {
+    flex: 2;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* 右側 */
+.index_top_right {
+    flex: 1;
+    background-color: white;
+    position: relative;
+    clip-path: ellipse(100% 100% at right center); /* 右側を円弧でカット */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ロゴ */
+.index_top_logo-wrap {
+    position: relative;
+    z-index: 2; /* ロゴを最前面に */
 }
 
 .index_top_logo {
-	height: 33vh; /* index_topの高さの30% */
+    max-width: 80%;
+    height: auto;
 }
 
 /* index_company */
