@@ -148,6 +148,31 @@ a{
     align-items: center;
 }
 
+/* 画面幅が 992px 以下の場合 */
+@media (max-width: 992px) {
+    .index_top {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .index_top_left {
+        flex: 1;
+        width: 100%;
+        min-height: 100vh; /* 高さを確保 */
+        clip-path: none; /* 円弧のカットを解除 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover; /* 背景画像の比率維持 */
+        background-position: center; /* 画像の位置を調整 */
+    }
+
+    .index_top_right {
+        display: none; /* 非表示 */
+    }
+}
+
+
 .index_top_logo {
 	height: 33vh; /* index_topの高さの30% */
 }
