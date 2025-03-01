@@ -167,14 +167,26 @@ a{
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
+    transition: transform 0.3s ease-out;
 }
 
 .index_top_scroll-img {
     width: 50px; /* 画像サイズ調整（適宜変更） */
     height: auto;
     opacity: 0.8;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease-out;
 }
+
+.index_top_scroll:hover {
+    transform: translateX(-50%) translateY(5px) scale(1.05); /* 下に移動しながら拡大 */
+}
+
+.index_top_scroll:hover .index_top_scroll-img {
+    opacity: 1; /* ホバー時に透明度を戻す */
+    transform: scale(1.05); /* 全体を均等に拡大 */
+}
+
+
 
 /* 画面幅が 992px 以下の場合 */
 @media (max-width: 992px) {
@@ -409,4 +421,3 @@ a{
     margin-left: 8px; /* ラベルと余白を調整 */
     vertical-align: middle; /* ラベルと高さを揃える */
 }
-
