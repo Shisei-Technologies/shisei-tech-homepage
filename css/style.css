@@ -327,7 +327,7 @@ a{
 
 .news_li_text {
     flex-grow: 1;
-    padding-left: 50px;
+    padding: 0 50px;
     text-align: left;
     min-width: 0; /* 必須: 小さくなりすぎないようにする */
     overflow-wrap: break-word; /* テキストが長くても折り返す */
@@ -357,16 +357,7 @@ a{
     text-decoration: underline;
 }
 
-/* 「過去のお知らせはこちら」のリンク */
-.news_link a {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    text-decoration: none;
-    font-size: 16px;
-    color: #007bff;
-    white-space: nowrap;
-}
+
 
 
 .news_arrow {
@@ -382,10 +373,11 @@ a{
     color: #187fc4;
 }
 
+/* 「過去のお知らせはこちら」のリンク */
 .news_link a {
     display: flex; /* 変更 */
     align-items: center;
-    gap: 5px;
+    gap: 25px;
     text-decoration: none;
     font-size: 16px;
     color: #187fc4;;
