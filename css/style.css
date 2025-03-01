@@ -105,19 +105,21 @@ a{
 	background:#187fc4;
 }
 /* pagetop */
-.pagetop{
-	position: absolute;
-	z-index: 100;
-	right: 2rem;
-	bottom: 0;
+.pagetop {
+    position: absolute;
+    z-index: 100;
+    right: 2rem;
+    bottom: 50%;
+    transform: translateY(50%);
 }
-.pagetop a{
-	display: inline-block;
-	text-align: center;
-	font-size: .8rem;
-	text-decoration-line:none;
-	color:#fff;
+
+.pagetop a {
+    display: inline-block;
+    text-align: center;
+    text-decoration-line: none;
+    color: #fff;
 }
+
 
 /* index_top */
 .index_top {
