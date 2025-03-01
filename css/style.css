@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+:target {
+	scroll-margin-top: 80px; /* ヘッダーの高さに合わせて調整 */
+  }
+
+
 /*nav ul {
     list-style:none;
 }*/
@@ -175,6 +180,36 @@ a{
 
 .index_top_logo {
 	height: 33vh; /* index_topの高さの30% */
+}
+
+/* business_content */
+
+.index_business-content_list_li {
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.index_business-content_list_li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.index_business-content_list_li_img {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.index_business-content_list h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.index_business-content_list p {
+    line-height: 1.8;
+    color: #555;
 }
 
 /* index_company */
