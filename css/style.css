@@ -298,6 +298,107 @@ a{
     font-size: 20px;
 }
 
+/* index_news */
+
+.index_news {
+    position: relative;
+    background: url('../img/logo-bg@2x.png') no-repeat center;
+    background-size: contain;
+}
+
+/* ニュース項目（変にならないようにする） */
+.news_li {
+    padding: 15px;
+    margin: 10px 0;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between; /* 左に日付とテキスト、右に矢印 */
+    width: 100%; /* ここで幅を維持 */
+    flex-wrap: wrap; /* 必要に応じて折り返しを許可 */
+}
+
+.news_li_date {
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+    min-width: 100px; /* ある程度の最小幅を確保 */
+}
+
+.news_li_text {
+    flex-grow: 1;
+    padding-left: 50px;
+    text-align: left;
+    min-width: 0; /* 必須: 小さくなりすぎないようにする */
+    overflow-wrap: break-word; /* テキストが長くても折り返す */
+}
+
+/* 「過去のお知らせはこちら」を右寄せ */
+.news_link {
+    width: 75%;
+    display: flex;
+    justify-content: flex-end; /* 右寄せ */
+    padding: 0 25px;
+}
+
+/* ニュース項目のリンク */
+.news_link_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    width: 100%; /* ここは元に戻す */
+    padding: 10px;
+}
+
+/* ホバー時に全体をアンダーライン */
+.news_link_item:hover {
+    text-decoration: underline;
+}
+
+/* 「過去のお知らせはこちら」のリンク */
+.news_link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #007bff;
+    white-space: nowrap;
+}
+
+
+.news_arrow {
+    font-size: 18px;
+    color: #187fc4;;
+    font-weight: bold;
+}
+
+.news_link {
+    width: 75%;
+    display: flex;
+    justify-content: flex-end; /* 右寄せ */
+    color: #187fc4;
+}
+
+.news_link a {
+    display: flex; /* 変更 */
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #187fc4;;
+    white-space: nowrap;
+    margin-left: auto; /* これが重要！ */
+}
+
+.news_link a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+
 
 
 /* index_contact */
