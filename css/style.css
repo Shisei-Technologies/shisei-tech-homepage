@@ -78,6 +78,24 @@ a{
 .header_h1_img{
 	height:68px;
 }
+
+.header_h1_img:hover {
+    animation: fuyonGrow 0.4s ease-out forwards;
+}
+
+@keyframes fuyonGrow {
+    0% { transform: scale(1); }       /* 通常サイズ */
+    100% { transform: scale(1.05); }   /* 少し縮んで安定 */
+}
+
+.header_h1_img:not(:hover) {
+    animation: fuyonShrink 0.4s ease-out forwards;
+}
+
+@keyframes fuyonShrink {
+    0% { transform: scale(1.05); }   /* 拡大した状態から */
+    100% { transform: scale(1); }   /* 元のサイズに戻る */
+}
 .navbar-expand-lg .navbar-nav .header_nav_nav-item{
 	display: flex;
     align-items: center; /* 垂直方向に中央揃え */
