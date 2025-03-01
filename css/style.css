@@ -397,3 +397,16 @@ a{
 .index_contact{
 	background:#d1e5f3;
 }
+
+.required {
+    display: inline-block;
+    background-color: #d9534f; /* Bootstrapのdanger色 (赤) */
+    color: #fff; /* 白文字 */
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 10px; /* 角を丸く */
+    margin-left: 8px; /* ラベルと余白を調整 */
+    vertical-align: middle; /* ラベルと高さを揃える */
+}
+
