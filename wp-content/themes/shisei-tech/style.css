@@ -1,0 +1,455 @@
+/*
+Theme Name: Shisei Theme
+Theme URI: https://example.com/
+Author: Shisei Technologies
+Author URI: https://shisei-tech.com/
+Description: 株式会社至誠テクノロジーズ_WordPressテーマ
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: shisei-theme
+*/
+
+@charset "UTF-8";
+
+:target {
+	scroll-margin-top: 80px; /* ヘッダーの高さに合わせて調整 */
+  }
+
+
+/*nav ul {
+    list-style:none;
+}*/
+ol, ul {
+    list-style: none;
+}
+img{
+	width:100%;
+}
+body {
+	font-family: "Helvetica Neue",
+		Arial,
+		"Hiragino Kaku Gothic ProN",
+		"Hiragino Sans",
+		Meiryo,
+		sans-serif;
+    color: #040000;
+}
+a{
+	color:#187fc4;
+}
+/* button */
+.linkbutton{
+	display:inline-block;
+	padding: 1rem 2rem;
+	border-radius: 6px;
+	border: solid #187fc4 1px;
+	background: #187fc4;
+	text-decoration-line:none;
+	font-weight: bold;
+	color:#fff;
+	margin-left: 10px; /* 左のマージンを追加 */
+    margin-right: 10px; /* 右のマージンを追加 */
+}
+.linkbutton:hover{
+	background: #fff;
+	color:#187fc4;
+}
+/* header */
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000; /* 他の要素より前面に表示 */
+	background-color: #fff; /* 背景色を設定して、コンテンツがスクロールしたときに見やすくする */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* オプション: ヘッダーに影をつけて浮き上がらせる */
+	transition: height 0.3s ease; /* スムーズな高さの変化を追加 */
+}
+
+.collapse {
+    transition: height 0.3s ease; /* スムーズな高さの変化を追加 */
+}
+
+.navbar {
+    align-items: center;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-collapse {
+    max-height: none; /* 高さの制限を解除 */
+}
+
+.header-content{
+	background:#fff;
+}
+.header_h1_img{
+	height:68px;
+}
+
+.header_h1_img:hover {
+    animation: fuyonGrow 0.4s ease-out forwards;
+}
+
+@keyframes fuyonGrow {
+    0% { transform: scale(1); }       /* 通常サイズ */
+    100% { transform: scale(1.05); }   /* 少し縮んで安定 */
+}
+
+.header_h1_img:not(:hover) {
+    animation: fuyonShrink 0.4s ease-out forwards;
+}
+
+@keyframes fuyonShrink {
+    0% { transform: scale(1.05); }   /* 拡大した状態から */
+    100% { transform: scale(1); }   /* 元のサイズに戻る */
+}
+.navbar-expand-lg .navbar-nav .header_nav_nav-item{
+	display: flex;
+    align-items: center; /* 垂直方向に中央揃え */
+    height: 100%; /* 親要素の高さに合わせる */
+    display: flex;
+    align-items: center; /* 垂直方向に中央揃え */
+	margin-left: 10px; /* 左のマージンを追加 */
+    margin-right: 10px; /* 右のマージンを追加 */
+}
+
+.navbar-expand-lg .navbar-nav .header_nav_nav-link {
+    display: flex;
+    align-items: center;
+    height: auto; /* 高さを親要素に依存させない */
+    line-height: normal; /* Bootstrapデフォルトを継承 */
+	color: #040000;
+}
+.navbar-expand-lg .navbar-nav .header_nav_nav-link:hover{
+	border-bottom:solid 2px #187fc4;
+	color: #187fc4;
+}
+/* footer */
+.footer{
+	position:relative;
+	background:#187fc4;
+}
+/* pagetop */
+.pagetop {
+    position: absolute;
+    z-index: 100;
+    right: 2rem;
+    bottom: 50%;
+    transform: translateY(50%);
+}
+
+.pagetop a {
+    display: inline-block;
+    text-align: center;
+    text-decoration-line: none;
+    color: #fff;
+}
+
+
+/* index_top */
+.index_top {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* クリップされた部分のはみ出しを防ぐ */
+    color: #fff;
+    margin-top: 90px; /* ヘッダーの高さ分のマージンを追加 */
+}
+
+.index_top_left {
+    flex: 2;
+    height: 100%;
+    background-image: url("http://localhost/wp-content/uploads/2025/03/index_top-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 右側を円弧でカット */
+    clip-path: ellipse(100% 125% at left center);
+}
+
+.index_top_right {
+    flex: 1;
+    height: 100vh; /* 100vh にしてエリア確保 */
+    background-color: #fff;
+    flex-direction: column; /* 縦方向に配置 */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: visible;
+}
+
+.index_top_logo {
+	height: 33vh; /* index_topの高さの30% */
+}
+
+.index_top_scroll {
+    position: absolute;
+    bottom: calc(33vh - 100px); /* ロゴの高さから相対的に配置 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    transition: transform 0.3s ease-out;
+}
+
+.index_top_scroll-img {
+    width: 50px; /* 画像サイズ調整（適宜変更） */
+    height: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease-out;
+}
+
+.index_top_scroll:hover {
+    transform: translateX(-50%) translateY(5px) scale(1.05); /* 下に移動しながら拡大 */
+}
+
+.index_top_scroll:hover .index_top_scroll-img {
+    opacity: 1; /* ホバー時に透明度を戻す */
+    transform: scale(1.05); /* 全体を均等に拡大 */
+}
+
+
+
+/* 画面幅が 992px 以下の場合 */
+@media (max-width: 992px) {
+    .index_top {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .index_top_left {
+        flex: 1;
+        width: 100%;
+        min-height: 100vh; /* 高さを確保 */
+        clip-path: none; /* 円弧のカットを解除 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover; /* 背景画像の比率維持 */
+        background-position: center; /* 画像の位置を調整 */
+    }
+
+    .index_top_right {
+        display: none !important; /* 非表示 */
+    }
+}
+
+@media (min-width: 993px) {
+    .index_top_right {
+        display: flex;
+    }
+}
+
+
+
+
+
+/* business_content */
+
+.index_business-content_list_li {
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.index_business-content_list_li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.index_business-content_list_li_img {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.index_business-content_list h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.index_business-content_list p {
+    line-height: 1.8;
+    color: #555;
+}
+
+/* index_company */
+
+.index_company {
+    position: relative;
+    z-index: 3;
+    background: url('http://localhost/wp-content/uploads/2025/03/company-bg.jpg') center;
+    aspect-ratio: 16 / 9;
+}
+
+
+
+.index_company:after {
+    display: block;
+    content: "";
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #fff;
+    opacity: 0.3;
+}
+
+.index_company_content {
+    position: relative; /* 親要素の影響を受けないように */
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明の白 */
+    border-radius: 10px; /* 角を丸くする */
+    z-index: 1;
+    width: 100%;
+    max-width: 1140px; /* Bootstrapのcontainerと同じ最大幅 */
+    padding: 2rem; /* 適度な余白 */
+}
+
+.index_company_content dl {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; /* 項目の揃え方を調整 */
+    margin-bottom: 50px; /* 行間を広げる */
+    padding-bottom: 10px; /* ラインと文字の間隔を確保 */
+    border-bottom: 1px solid #aaa; /* 薄いグレーのライン */
+}
+
+.index_company_content dt {
+    flex: 0 0 30%; /* ラベルの幅を可変に */
+    max-width: 250px; /* 最大幅を指定 */
+    min-width: 150px; /* 最小幅を指定 */
+    font-weight: bold;
+    padding-bottom: 4px;
+    font-size: 20px;
+}
+
+.index_company_content dd {
+    flex: 1; /* 残りのスペースを使用 */
+    margin: 0;
+    font-weight: bold;
+    padding-bottom: 4px;
+    font-size: 20px;
+}
+
+/* index_news */
+
+.index_news {
+    position: relative;
+    background: url('http://localhost/wp-content/uploads/2025/03/logo-bg@2x.png') no-repeat center;
+    background-size: contain;
+}
+
+/* ニュース項目（変にならないようにする） */
+.news_li {
+    padding: 15px;
+    margin: 10px 0;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between; /* 左に日付とテキスト、右に矢印 */
+    width: 100%; /* ここで幅を維持 */
+    flex-wrap: wrap; /* 必要に応じて折り返しを許可 */
+}
+
+.news_li_date {
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+    min-width: 100px; /* ある程度の最小幅を確保 */
+}
+
+.news_li_text {
+    flex-grow: 1;
+    padding: 0 50px;
+    text-align: left;
+    min-width: 0; /* 必須: 小さくなりすぎないようにする */
+    overflow-wrap: break-word; /* テキストが長くても折り返す */
+}
+
+/* 「過去のお知らせはこちら」を右寄せ */
+.news_link {
+    width: 75%;
+    display: flex;
+    justify-content: flex-end; /* 右寄せ */
+    padding: 0 25px;
+}
+
+/* ニュース項目のリンク */
+.news_link_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    width: 100%; /* ここは元に戻す */
+    padding: 10px;
+}
+
+/* ホバー時に全体をアンダーライン */
+.news_link_item:hover {
+    text-decoration: underline;
+}
+
+
+
+
+.news_arrow {
+    font-size: 18px;
+    color: #187fc4;;
+    font-weight: bold;
+}
+
+.news_link {
+    width: 75%;
+    display: flex;
+    justify-content: flex-end; /* 右寄せ */
+    color: #187fc4;
+}
+
+/* 「過去のお知らせはこちら」のリンク */
+.news_link a {
+    display: flex; /* 変更 */
+    align-items: center;
+    gap: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #187fc4;;
+    white-space: nowrap;
+    margin-left: auto; /* これが重要！ */
+}
+
+.news_link a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+
+
+
+/* index_contact */
+.index_contact{
+	background:#d1e5f3;
+}
+
+.required {
+    display: inline-block;
+    background-color: #d9534f; /* Bootstrapのdanger色 (赤) */
+    color: #fff; /* 白文字 */
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 10px; /* 角を丸く */
+    margin-left: 8px; /* ラベルと余白を調整 */
+    vertical-align: middle; /* ラベルと高さを揃える */
+}
