@@ -148,11 +148,32 @@ a{
 
 .index_top_right {
     flex: 1;
-    height: 100%;
+    height: 100vh; /* 100vh にしてエリア確保 */
     background-color: #fff;
-    display: flex;
+    flex-direction: column; /* 縦方向に配置 */
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow: visible;
+}
+
+.index_top_logo {
+	height: 33vh; /* index_topの高さの30% */
+}
+
+.index_top_scroll {
+    position: absolute;
+    bottom: calc(33vh - 100px); /* ロゴの高さから相対的に配置 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.index_top_scroll-img {
+    width: 50px; /* 画像サイズ調整（適宜変更） */
+    height: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
 }
 
 /* 画面幅が 992px 以下の場合 */
@@ -175,14 +196,19 @@ a{
     }
 
     .index_top_right {
-        display: none; /* 非表示 */
+        display: none !important; /* 非表示 */
+    }
+}
+
+@media (min-width: 993px) {
+    .index_top_right {
+        display: flex;
     }
 }
 
 
-.index_top_logo {
-	height: 33vh; /* index_topの高さの30% */
-}
+
+
 
 /* business_content */
 
