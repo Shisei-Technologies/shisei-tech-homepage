@@ -1,36 +1,55 @@
 version: "3.7"
+
 services:
- db:
-  image: mysql:8.0
-  container_name: shisei-tech_mysql8
-  restart: always
-  environment:
-    MYSQL_ROOT_PASSWORD: password # rootユーザのパスワード
-    MYSQL_DATABASE: db_local # WordPress用データベース名
-    MYSQL_USER: wp_user # WordPress用データベース接続ユーザ名
-    MYSQL_PASSWORD: password # WordPress用データベース接続パスワード
- WordPress:
-  image: wordpress:latest
-  container_name: shisei-tech_wordpress
-  restart: always
-  depends_on:
-     - db
-  ports:
-     - 80:80
-  environment:
-    WORDPRESS_DB_HOST: db:3306 # データベースサーバ名：ポート番号
-    WORDPRESS_DB_USER: wp_user # WordPress用データベース接続ユーザ名(dbの内容に合わせる)
-    WORDPRESS_DB_PASSWORD: password # WordPress用データベース接続パスワード(dbの内容に合わせる)
-    WORDPRESS_DB_NAME: db_local # WordPress用データベース名(dbの内容に合わせる)
-    WORDPRESS_DEBUG: 1 # デバッグモードON
-  volumes:
-     - ./:/var/www/html
- phpmyadmin:
-  image: phpmyadmin/phpmyadmin:latest
-  platform: linux/amd64 # 井口追加
-  container_name: shisei-tech_phpmyadmin
-  restart: always
-  depends_on:
-     - db
-  ports:
-     - 10099:80
+  db:
+    image: mysql:8.0
+    container_name: shisei-tech_mysql8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: db_local
+      MYSQL_USER: wp_user
+      MYSQL_PASSWORD: password
+
+  wordpress:
+    image: wordpress:latest
+    container_name: shisei-tech_wordpress
+    restart: always
+    depends_on:
+      - db
+      - mailhog  # MailHog を追加
+    ports:
+      - 80:80
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wp_user
+      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_NAME: db_local
+      WORDPRESS_DEBUG: 1
+      # SMTP 設定を追加
+      SMTP_HOST: mailhog
+      SMTP_PORT: 1025
+      SMTP_USER: ""
+      SMTP_PASSWORD: ""
+      SMTP_AUTH: "false"
+      SMTP_SECURE: "none"
+    volumes:
+      - ./:/var/www/html
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    platform: linux/amd64
+    container_name: shisei-tech_phpmyadmin
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 10099:80
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: shisei-tech_mailhog
+    restart: always
+    ports:
+      - 1025:1025  # SMTP ポート
+      - 8025:8025  # Web UI ポート
