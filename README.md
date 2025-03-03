@@ -41,7 +41,3 @@ docker-compose down
 ## 注意事項
 - `prototype/` は静的コーディング用のファイル群であり、WordPress とは直接関係ありません。
 - `wp-content/` は `.gitignore` により基本的に Git 管理対象外ですが、`wp-content/themes/my-theme/` は例外として Git 管理されています。
-- `docker-compose.yml` を変更することで、必要に応じて環境をカスタマイズできます。
-
-## ライセンス
-このプロジェクトは自由に使用・改変可能ですが、自己責任でご利用ください。
