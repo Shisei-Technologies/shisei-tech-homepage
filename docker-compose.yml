@@ -24,7 +24,7 @@ services:
     WORDPRESS_DB_NAME: db_local # WordPress用データベース名(dbの内容に合わせる)
     WORDPRESS_DEBUG: 1 # デバッグモードON
   volumes:
-     - ./wp:/var/www/html
+     - ./:/var/www/html
  phpmyadmin:
   image: phpmyadmin/phpmyadmin:latest
   platform: linux/amd64 # 井口追加
