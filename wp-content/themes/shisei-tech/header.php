@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="max-image-preview:large">
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/img/icon.png">
+    <!-- <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon.png"> -->
 
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="<?php echo esc_attr(get_option('google_site_verification')); ?>">
