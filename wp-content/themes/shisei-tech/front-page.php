@@ -154,39 +154,26 @@
                 <p class="text-center"><strong>お問い合わせ</strong></p>
             </h2>
             <div class="pb-5 text-center">開発のご質問・ご相談は、以下のフォームよりお問い合せください。</div>
-            <div class="d-inline-block w-75">
-                <dl>
-                    <dt><label for="" class="form-label">企業名</label></dt>
-                    <dd>
-                        <input type="text" class="form-control" placeholder="企業名を入力してください">
-                    </dd>
-                </dl>
-                <dl>
-                    <dt><label for="" class="form-label">氏名</label><span class="required">必須</span></dt>
-                    <dd>
-                        <input type="text" class="form-control" placeholder="氏名を入力してください">
-                    </dd>
-                </dl>
-                <dl>
-                    <dt><label for="" class="form-label">メールアドレス</label><span class="required">必須</span></dt>
-                    <dd>
-                        <input type="email" class="form-control" placeholder="メールアドレスを入力してください">
-                    </dd>
-                </dl>
-                <dl>
-                    <dt><label for="" class="form-label">電話番号</label></dt>
-                    <dd>
-                        <input type="tel" class="form-control" placeholder="電話番号を入力してください">
-                    </dd>
-                </dl>
-                <dl>
-                    <dt><label for="" class="form-label">お問い合わせ内容</label><span class="required">必須</span></dt>
-                    <dd>
-                        <textarea class="form-control" rows="15"></textarea>
-                    </dd>
-                </dl>
-                <div class="text-center mt-5">
-                    <input class="d-md-block m-md-auto w-50 btn linkbutton" type="submit" value="お問い合わせを送信する">
+                <div class="d-inline-block w-75">
+                    <?php
+                    $form_title = 'Contact form 1'; // Contact Form 7 のフォームタイトル
+
+                    // WP_Query でフォーム ID を取得
+                    $query = new WP_Query(array(
+                        'post_type'  => 'wpcf7_contact_form',
+                        'title'      => $form_title,
+                        'posts_per_page' => 1
+                    ));
+
+                    if ($query->have_posts()) {
+                        $query->the_post();
+                        $form_id = get_the_ID();
+                        echo do_shortcode('[contact-form-7 id="' . $form_id . '" title="' . esc_attr($form_title) . '"]');
+                        wp_reset_postdata();
+                    } else {
+                        echo '<p>フォームが見つかりません。</p>';
+                    }
+                    ?>
                 </div>
             </div>
         </div>
