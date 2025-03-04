@@ -99,7 +99,7 @@
     </div>
 
 
-    <div class="index_news mt-5 mb-5 pt-5 pb-5" id="news">
+    <!-- <div class="index_news mt-5 mb-5 pt-5 pb-5" id="news">
         <div class="container d-flex flex-column align-items-center">
             <h2 class="h2 pt-5 pb-5">
                 <p class="text-center"><strong>お知らせ</strong></p>
@@ -145,7 +145,7 @@
                 <a href="#">過去のお知らせはこちら <span class="news_arrow">＞</span></a>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <div class="index_contact pt-5 pb-5" id="contact">
