@@ -490,3 +490,8 @@ a{
     margin-left: 8px; /* ラベルと余白を調整 */
     vertical-align: middle; /* ラベルと高さを揃える */
 }
+
+.wpcf7-submit {
+    display: block;
+    margin: 0 auto;
+}
