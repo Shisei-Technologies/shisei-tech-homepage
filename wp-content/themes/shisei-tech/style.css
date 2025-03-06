@@ -91,6 +91,13 @@ a{
 	height:68px;
 }
 
+@media (max-width: 375px) {
+    .header_h1_img {
+        max-width: 180px; /* 適切なサイズに縮小 */
+    }
+}
+
+
 .header_h1_img:hover {
     animation: fuyonGrow 0.4s ease-out forwards;
 }
@@ -129,6 +136,11 @@ a{
 	border-bottom:solid 2px #187fc4;
 	color: #187fc4;
 }
+
+.navbar-toggler {
+    margin-left: auto;
+}
+
 /* footer */
 .footer{
 	position:relative;
@@ -312,8 +324,15 @@ a{
     border-radius: 10px; /* 角を丸くする */
     z-index: 1;
     width: 100%;
-    max-width: 1140px; /* Bootstrapのcontainerと同じ最大幅 */
+    max-width: 90%; /* スマホでは左右の余白を確保 */
     padding: 2rem; /* 適度な余白 */
+}
+
+@media (max-width: 768px) {
+    .index_company_content {
+        max-width: 95%; /* 画面幅が狭くなったら少し余白を増やす */
+        padding: 1.5rem;
+    }
 }
 
 .index_company_content dl {
@@ -342,11 +361,29 @@ a{
     font-size: 20px;
 }
 
+@media (max-width: 576px) {
+    .index_company_content dl {
+        flex-direction: column; /* モバイルでは縦並び */
+    }
+
+    .index_company_content dt {
+        flex: none; /* 幅を固定しない */
+        width: 100%; /* 100%幅で表示 */
+        font-size: 18px;
+    }
+
+    .index_company_content dd {
+        width: 100%;
+        font-size: 18px;
+        font-weight: normal
+    }
+}
+
 /* index_news */
 
 .index_news {
     position: relative;
-    background: url('img/logo-bg@2x.png') no-repeat center;
+    background: url('../img/logo-bg@2x.png') no-repeat center;
     background-size: contain;
 }
 

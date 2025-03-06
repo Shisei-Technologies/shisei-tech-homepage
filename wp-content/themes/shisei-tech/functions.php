@@ -18,6 +18,15 @@ function shisei_enqueue_scripts() {
     );
     // wp_script_add_data('bootstrap-js', 'integrity', 'sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM');
     wp_script_add_data('bootstrap-js', 'crossorigin', 'anonymous');
+
+     // **js/menu.js を WordPress に登録**
+    wp_enqueue_script(
+        'shisei-menu-js', // ハンドル名（ユニークな識別子）
+        get_template_directory_uri() . '/js/menu.js', // js/menu.js のパス
+        array('bootstrap-js'), // Bootstrap JS に依存
+        null,
+        true // `true` でフッターに読み込む
+    );
 }
 add_action('wp_enqueue_scripts', 'shisei_enqueue_scripts');
 

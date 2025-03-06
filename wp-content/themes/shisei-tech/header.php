@@ -23,7 +23,7 @@
 
 
 <header class="navbar navbar-expand-lg navbar-light header">
-    <div class="container">
+    <div class="container d-flex justify-content-between align-items-center">
         <a class="navbar-brand" href="<?php echo home_url(); ?>">
             <img src="<?php echo get_template_directory_uri(); ?>/img/logo-01.svg" alt="株式会社至誠テクノロジーズ" class="header_h1_img">
         </a>
