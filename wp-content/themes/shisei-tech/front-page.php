@@ -154,7 +154,7 @@
                 <p class="text-center"><strong>お問い合わせ</strong></p>
             </h2>
             <div class="pb-5 text-center">開発のご質問・ご相談は、以下のフォームよりお問い合せください。</div>
-                <div class="d-inline-block w-75">
+                <div class="container-sm">
                     <?php
                     $form_title = 'Contact form 1'; // Contact Form 7 のフォームタイトル
 
