@@ -50,26 +50,20 @@ docker-compose down
 以下の設定でフォームを作成してください。（WordPress 管理画面 → 「お問い合わせ」→「新規追加」）
 
 ```
-<label class="form-label">企業名</label>
-[text company class:form-control placeholder "企業名を入力してください"]
+<label class="form-label">氏名<span class="required">必須</span></label>
+    [text* your-name class:form-control placeholder "氏名を入力してください"]
 
-<label class="form-label">氏名 <span class="required">必須</span></label>
-[text* your-name class:form-control placeholder "氏名を入力してください"]
+<label class="form-label">メールアドレス<span class="required">必須</span></label>
+    [email* your-email class:form-control placeholder "メールアドレスを入力してください"]
 
-<label class="form-label">メールアドレス <span class="required">必須</span></label>
-[email* your-email class:form-control placeholder "メールアドレスを入力してください"]
+<label class="form-label">件名</label>
+    [text* your-subject class:form-control placeholder "件名を入力してください"]
 
-<label class="form-label">電話番号</label>
-[tel phone class:form-control placeholder "電話番号を入力してください"]
-
-<label class="form-label">件名 <span class="required">必須</span></label>
-[text* your-subject class:form-control placeholder "件名を入力してください"]
-
-<label class="form-label">お問い合わせ内容 <span class="required">必須</span></label>
-[textarea* your-message class:form-control rows:15 placeholder "お問い合わせ内容を入力してください"]
+<label class="form-label">お問い合わせ内容<span class="required">必須</span></label>
+    [textarea* your-message class:form-control rows:15 placeholder "お問い合わせ内容を入力してください"]
 
 <div class="mt-5 text-center">
-    [submit class:d-md-block class:m-md-auto class:w-50 class:btn class:linkbutton "お問い合わせを送信する"]
+    [submit class:w-50 class:btn class:linkbutton "送信する"]
 </div>
 ```
 
