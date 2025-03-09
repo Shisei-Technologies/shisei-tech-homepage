@@ -17,3 +17,5 @@ Thumbs.db
 !/wp-content/themes/shisei-tech
 /wp-content/themes/shisei-tech/css/.sass-cache/*
 /wp-includes/*
+
+.vscode/sftp.json
